@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de Rebranding: Frida Beauty Skin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados para la presentación */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FDFBF8;
+            color: #333;
+            overflow: hidden; /* Evita el scroll de la página entera */
+        }
+        .playfair-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .slide {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 4rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+            transform: translateX(100%);
+        }
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+        .slide.prev {
+            transform: translateX(-100%);
+        }
+        .slide-content {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+        .bg-cover-image {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .nav-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        .nav-arrow:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        .nav-arrow.left {
+            left: 20px;
+        }
+        .nav-arrow.right {
+            right: 20px;
+        }
+        .nav-dots {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .dot.active {
+            background-color: #333;
+        }
+        .icon-svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+            color: #C4A484; /* Tono dorado/arena */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Contenedor principal de las diapositivas -->
+    <div id="presentation-container">
+
+        <!-- Diapositiva 1: Portada -->
+        <div id="slide-1" class="slide active bg-cover-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/1920x1080/FDFBF8/333333?text=Frida+Beauty+Skin');">
+            <div class="slide-content text-white text-center">
+                <h1 class="playfair-display text-5xl md:text-7xl font-bold mb-4">Proyecto de Rebranding y Estrategia de Marca</h1>
+                <h2 class="text-2xl md:text-3xl mb-8">Frida Beauty Skin</h2>
+                <p class="text-lg md:text-xl italic">Un nuevo comienzo para una marca destinada a brillar.</p>
+            </div>
+        </div>
+
+        <!-- Diapositiva 2: Introducción -->
+        <div id="slide-2" class="slide">
+            <div class="slide-content grid md:grid-cols-2 gap-12 items-center text-left">
+                <div class="md:border-r-2 md:pr-12 border-gray-200">
+                    <h3 class="text-xl text-[#C4A484] mb-2">Nuestra Filosofía</h3>
+                    <h1 class="playfair-display text-5xl md:text-6xl font-bold">Estrategia antes que Estética.</h1>
+                </div>
+                <div>
+                    <p class="text-lg leading-relaxed">Para construir una marca memorable y rentable, primero debemos entender sus cimientos.</p>
+                    <p class="text-lg leading-relaxed mt-4">Nuestro proceso comienza con una inmersión profunda en tu negocio, tu cliente y tus metas. Porque un gran diseño no es solo verse bien, es comunicar el valor correcto a la persona correcta.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diapositiva 3: El Plan de Vuelo -->
+        <div id="slide-3" class="slide">
+            <div class="slide-content text-center">
+                <h1 class="playfair-display text-5xl font-bold mb-12">Nuestro Proceso: De la Esencia a la Expansión</h1>
+                <div class="grid md:grid-cols-4 gap-8 text-left relative">
+                    <!-- Línea de conexión -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200" style="transform: translateY(-50%); z-index: -1;"></div>
+                    <div class="p-6 bg-white rounded-lg shadow-lg relative">
+                        <span class="absolute -top-4 -left-4 bg-[#C4A484] text-white rounded-full h-10 w-10 flex items-center justify-center text-xl font-bold">1</span>
+                        <h3 class="font-bold text-lg mb-2">DESCUBRIMIENTO</h3>
+                        <p class="text-sm">El Briefing de Marca: La sesión más importante para definir el ADN del negocio.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-lg relative">
+                        <span class="absolute -top-4 -left-4 bg-[#C4A484] text-white rounded-full h-10 w-10 flex items-center justify-center text-xl font-bold">2</span>
+                        <h3 class="font-bold text-lg mb-2">ESTRATEGIA</h3>
+                        <p class="text-sm">Definición del posicionamiento y el mensaje clave que nos diferenciará.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-lg relative">
+                        <span class="absolute -top-4 -left-4 bg-[#C4A484] text-white rounded-full h-10 w-10 flex items-center justify-center text-xl font-bold">3</span>
+                        <h3 class="font-bold text-lg mb-2">IDENTIDAD</h3>
+                        <p class="text-sm">Creación del nuevo logo, colores, voz y tono de la marca.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-lg relative">
+                        <span class="absolute -top-4 -left-4 bg-[#C4A484] text-white rounded-full h-10 w-10 flex items-center justify-center text-xl font-bold">4</span>
+                        <h3 class="font-bold text-lg mb-2">CRECIMIENTO</h3>
+                        <p class="text-sm">Lanzamiento, plan de contenidos y campañas para atraer clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 4: Título de Sección -->
+        <div id="slide-4" class="slide bg-cover-image" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://placehold.co/1920x1080/EAE6E1/333333?text=Rostro+con+piel+luminosa');">
+            <div class="slide-content text-white bg-black bg-opacity-30 p-8 rounded-lg">
+                <h1 class="playfair-display text-5xl md:text-6xl font-bold">Fase 1: Descubrimiento y Diagnóstico</h1>
+                <h3 class="text-xl md:text-2xl mt-4 italic">Las preguntas clave que definirán nuestro éxito.</h3>
+            </div>
+        </div>
+
+        <!-- Diapositiva 5: El Alma de tu Marca -->
+        <div id="slide-5" class="slide">
+            <div class="slide-content text-center">
+                <h1 class="playfair-display text-5xl font-bold mb-12">El Alma de tu Marca</h1>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="flex flex-col items-center">
+                        <svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        <h3 class="playfair-display text-2xl font-bold mb-2">Misión: Tu "Porqué"</h3>
+                        <p>¿Por qué existe tu negocio más allá del dinero? ¿Qué problema fundamental resuelves en la vida de tus clientas?</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
+                        <h3 class="playfair-display text-2xl font-bold mb-2">Visión: Tu Norte</h3>
+                        <p>Si todo sale perfecto, ¿dónde estará tu marca en 3-5 años? ¿Cuál es el sueño más grande que tienes para ella?</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                       <svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                        <h3 class="playfair-display text-2xl font-bold mb-2">Valores: Tu Brújula</h3>
+                        <p>¿Cuáles son los 3-5 principios inquebrantables que guían cada decisión, desde el trato al cliente hasta la elección de un producto?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diapositiva 6: Propuesta Única de Valor -->
+        <div id="slide-6" class="slide">
+            <div class="slide-content text-center">
+                <h3 class="text-xl text-[#C4A484] mb-4">La Pregunta del Millón</h3>
+                <h1 class="playfair-display text-4xl md:text-6xl font-bold leading-tight mb-8">¿Por qué una clienta debería elegir "Frida Beauty Skin" y no cualquier otra opción en Tijuana?</h1>
+                <p class="text-lg italic">La respuesta a esta pregunta es la base de todo nuestro marketing.</p>
+            </div>
+        </div>
+
+        <!-- Diapositiva 7: La Clienta Ideal -->
+        <div id="slide-7" class="slide">
+            <div class="slide-content grid md:grid-cols-2 gap-12 items-center text-left">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://placehold.co/400x600/D6C8BC/333333?text=Estilo+de+vida" alt="[Imagen de una mujer profesional en una cafetería bonita]" class="rounded-lg shadow-xl object-cover w-full h-full">
+                    <img src="https://placehold.co/400x600/EAE6E1/333333?text=Bienestar" alt="[Imagen de una mujer practicando yoga]" class="rounded-lg shadow-xl object-cover w-full h-full mt-8">
+                </div>
+                <div>
+                    <h1 class="playfair-display text-5xl font-bold mb-8">Conectando con "Ella"</h1>
+                    <ul class="space-y-4 text-lg">
+                        <li><strong class="text-[#C4A484]">Su Dolor Real:</strong> ¿Qué le frustra de su piel o cuerpo? ¿Qué inseguridades le genera en su día a día?</li>
+                        <li><strong class="text-[#C4A484]">Su Deseo Profundo:</strong> No busca un "facial", busca "confianza". No quiere un "reductivo", quiere "sentirse cómoda".</li>
+                        <li><strong class="text-[#C4A484]">Su Vida:</strong> ¿Qué consume en redes? ¿Qué marcas le gustan? ¿Qué valora en un servicio?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 8: Ecosistema Competitivo -->
+        <div id="slide-8" class="slide">
+            <div class="slide-content text-center">
+                <h1 class="playfair-display text-5xl font-bold mb-12">El Terreno de Juego</h1>
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="playfair-display text-2xl font-bold mb-4">Competencia Directa</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>¿Qué están haciendo bien los demás?</li>
+                            <li>¿Dónde están sus debilidades?</li>
+                            <li>¿Qué oportunidades nos deja esto para diferenciarnos?</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="playfair-display text-2xl font-bold mb-4">Marcas de Inspiración</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>¿Qué marcas (de cualquier industria) admiramos por su branding?</li>
+                            <li>¿Cómo podemos adaptar ideas geniales a nuestro modelo?</li>
+                            <li>¿Qué nivel de calidad visual y de comunicación queremos alcanzar?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 9: Diagnóstico Preliminar -->
+        <div id="slide-9" class="slide">
+            <div class="slide-content text-center">
+                <h1 class="playfair-display text-5xl font-bold mb-12">Análisis Inicial: Instagram Actual</h1>
+                <div class="grid md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
+                    <div class="bg-green-50 p-8 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold mb-4 text-green-800">✅ Fortalezas Actuales</h3>
+                        <ul class="space-y-2 text-green-700">
+                            <li><strong>Prueba Social Fuerte:</strong> El uso de "Antes y Después" es excelente y genera confianza.</li>
+                            <li><strong>Variedad de Servicios:</strong> Muestras capacidad en diferentes áreas.</li>
+                            <li><strong>Contacto Directo:</strong> El enlace a WhatsApp es práctico.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yellow-50 p-8 rounded-lg border-l-4 border-yellow-500">
+                        <h3 class="text-2xl font-bold mb-4 text-yellow-800">💡 Oportunidades Clave</h3>
+                         <ul class="space-y-2 text-yellow-700">
+                            <li><strong>Identidad Visual:</strong> Crear una línea gráfica consistente y profesional.</li>
+                            <li><strong>Calidad de Imagen:</strong> Invertir en fotografía profesional para comunicar calidad premium.</li>
+                            <li><strong>Storytelling:</strong> Pasar de describir servicios a contar historias y conectar con emociones.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 10: Siguientes Pasos -->
+        <div id="slide-10" class="slide">
+            <div class="slide-content text-center max-w-2xl">
+                <h1 class="playfair-display text-5xl font-bold mb-8">¿Listas para Construir?</h1>
+                <p class="text-xl mb-8">El siguiente paso es agendar nuestra <strong>Sesión de Descubrimiento de Marca</strong>. En esta sesión de 90 minutos, profundizaremos en todas estas preguntas para extraer el ADN de "Frida Beauty Skin" y sentar las bases de una marca irresistible.</p>
+                <a href="#" class="bg-[#333] text-white py-3 px-8 rounded-full text-lg hover:bg-[#C4A484] transition-colors duration-300">Agendar Sesión</a>
+            </div>
+        </div>
+
+        <!-- Diapositiva 11: Cierre -->
+        <div id="slide-11" class="slide">
+            <div class="slide-content text-center">
+                <h1 class="playfair-display text-6xl font-bold mb-4">Gracias.</h1>
+                <p class="text-lg">Tu Nombre / Nombre de Agencia</p>
+                <p class="text-lg">tuemail@email.com | +52 XXX XXX XXXX</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Controles de Navegación -->
+    <div id="nav-prev" class="nav-arrow left">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+    </div>
+    <div id="nav-next" class="nav-arrow right">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+    </div>
+    <div id="nav-dots-container" class="nav-dots"></div>
+
+    <script>
+        // Lógica de la presentación
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const dotsContainer = document.getElementById('nav-dots-container');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            // Crear puntos de navegación
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                dot.dataset.slide = i;
+                dotsContainer.appendChild(dot);
+            }
+
+            const dots = document.querySelectorAll('.dot');
+
+            function updateSlides() {
+                slides.forEach((slide, index) => {
+                    slide.classList.remove('active', 'prev');
+                    if (index === currentSlide) {
+                        slide.classList.add('active');
+                    } else if (index < currentSlide) {
+                        slide.classList.add('prev');
+                    }
+                });
+
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+
+            function goToSlide(slideNumber) {
+                currentSlide = slideNumber;
+                if (currentSlide < 0) currentSlide = totalSlides - 1;
+                if (currentSlide >= totalSlides) currentSlide = 0;
+                updateSlides();
+            }
+
+            document.getElementById('nav-next').addEventListener('click', () => {
+                goToSlide(currentSlide + 1);
+            });
+
+            document.getElementById('nav-prev').addEventListener('click', () => {
+                goToSlide(currentSlide - 1);
+            });
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    goToSlide(parseInt(e.target.dataset.slide));
+                });
+            });
+
+            // Navegación con teclas de flecha
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    goToSlide(currentSlide + 1);
+                } else if (e.key === 'ArrowLeft') {
+                    goToSlide(currentSlide - 1);
+                }
+            });
+
+            // Iniciar la presentación
+            updateSlides();
+        });
+    </script>
+
+</body>
+</html>
